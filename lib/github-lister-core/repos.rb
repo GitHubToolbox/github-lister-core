@@ -76,7 +76,7 @@ class GithubListerCore
         # Generate a slub list of repos for all organisations that a user is a member of
         #
         def all_repos_private(client, options, users)
-            repos = user_repos_private(client, options, users) + org_repos_for_user_private(client, options, users)
+            repos = user_repos_private(client, options, users) + org_members_repos_private(client, options, users)
             repos.flatten.sort_by { |repo| repo[:full_name].downcase }
         end
 

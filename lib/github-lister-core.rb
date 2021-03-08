@@ -36,9 +36,9 @@ class GithubListerCore
             users = get_user_list(client, options)
 
             if flag_set?(options, :use_slugs)
-                user_repo_slugs_private(client, options, users)
+                user_repo_slugs_private(client, users).to_json
             else
-                user_repos_private(client, options, users)
+                user_repos_private(client, options, users).to_json
             end
         end
 
