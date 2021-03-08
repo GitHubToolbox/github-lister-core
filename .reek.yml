@@ -1,0 +1,10 @@
+---
+detectors:
+    TooManyStatements:
+        max_statements: 10
+    TooManyMethods:
+        max_methods: 20
+    DataClump:
+        enabled: false
+    NilCheck:
+        enabled: false
