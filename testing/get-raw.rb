@@ -10,7 +10,9 @@ $LOAD_PATH.unshift('./lib')
 require 'bundler/setup'
 require 'github-lister-core'
 
-config = {}
+# rubocop:disable Lint/UselessAssignment
+config = { :token => 'Add token here' }
+# rubocop:enable Lint/UselessAssignment
 
 def count_results(results)
     puts JSON.parse(results).size
@@ -21,16 +23,16 @@ def display_results(results)
 end
 
 # count_results(GithubListerCore.user_repos(config))
-display_results(GithubListerCore.user_repos(config))
+# display_results(GithubListerCore.user_repos(config))
 
 # count_results(GithubListerCore.org_repos(config))
-display_results(GithubListerCore.org_repos(config))
+# display_results(GithubListerCore.org_repos(config))
 
 # count_results(GithubListerCore.org_members_repos(config))
-display_results(GithubListerCore.org_members_repos(config))
+# display_results(GithubListerCore.org_members_repos(config))
 
 # count_results(GithubListerCore.all_repos(config))
-display_results(GithubListerCore.all_repos(config))
+# display_results(GithubListerCore.all_repos(config))
 
 # count_results(GithubListerCore.org_membership(config))
-display_results(GithubListerCore.org_membership(config))
+# display_results(GithubListerCore.org_membership(config))

@@ -13,7 +13,8 @@ class GithubListerCore
         # Extra the topics slug from the payload and return it
         #
         def languages_private(client, repo)
-            function_wrapper(client, 'languages', repo)
+            languages = function_wrapper(client, 'languages', repo)
+            decode_sawyer_resource(languages)
         end
 
         #
@@ -21,7 +22,7 @@ class GithubListerCore
         #
         # This method smells of :reek:FeatureEnvy
         def add_languages_private(client, repos)
-            (repo_list ||= []) << Parallel.each(repos, :in_threads => repos.count) { |repo| repo[:languages] = languages_internal(client, repo[:full_name]) }
+            (repo_list ||= []) << Parallel.each(repos, :in_threads => repos.count) { |repo| repo[:languages] = languages_private(client, repo[:full_name]) }
             repo_list.flatten
         end
     end

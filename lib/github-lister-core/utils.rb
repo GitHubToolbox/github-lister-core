@@ -9,8 +9,28 @@ class GithubListerCore
 
         private
 
+        def decode_sawyer_array(array)
+            results = []
+
+            array.each do |element|
+                results.append(decode_sawyer_resource(element))
+            end
+            results
+        end
+
+        def decode_sawyer_resource(item)
+            case item
+            when Sawyer::Resource
+                item.to_h
+            when Array
+                decode_sawyer_array(item)
+            else
+                item
+            end
+        end
+
         def clean_from_parallel(item, sorted = nil)
-            return [] if item.nil?
+            return {} if item.nil?
 
             item = item.flatten.map(&:to_h).uniq
             item = item.sort_by { |repo| repo[sorted].downcase } if sorted

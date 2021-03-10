@@ -16,14 +16,14 @@ class GithubListerCore
             rescue NotFoundError => _exception
             end
             # rubocop:enable Lint/SuppressedException
-            release || []
+            decode_sawyer_resource(release) || {}
         end
 
         #
         # Add topics to each repo
         #
         # This method smells of :reek:FeatureEnvy
-        def add_latest_release(client, repos)
+        def add_latest_release_private(client, repos)
             (repo_list ||= []) << Parallel.each(repos, :in_threads => repos.count) { |repo| repo[:latest_release] = latest_release_private(client, repo[:full_name]) }
             repo_list.flatten
         end
@@ -38,14 +38,14 @@ class GithubListerCore
             rescue NotFoundError => _exception
             end
             # rubocop:enable Lint/SuppressedException
-            releases || []
+            decode_sawyer_resource(releases) || []
         end
 
         #
         # Add topics to each repo
         #
         # This method smells of :reek:FeatureEnvy
-        def add_releases(client, repos)
+        def add_releases_private(client, repos)
             (repo_list ||= []) << Parallel.each(repos, :in_threads => repos.count) { |repo| repo[:releases] = releases_private(client, repo[:full_name]) }
             repo_list.flatten
         end
