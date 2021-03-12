@@ -27,6 +27,6 @@ class GithubListerCore
             end
             results || []
         end
+        # rubocop:enable Metrics/MethodLength
     end
-    # rubocop:enable Metrics/MethodLength
 end

@@ -26,12 +26,20 @@ class GithubListerCore
             user_list
         end
 
+        def get_authed_username(client)
+            begin
+                client.user if client.user_authenticated?
+            rescue Octokit::Unauthorized => _exception
+                raise InvalidTokenError.new
+            end
+        end
+
         #
         # Users can be a string (comma separated) or an array nothing else
         #
         def get_user_list(client, options)
             user_list = get_option(options, [:user, :username])
-            authed = client.user if client.user_authenticated?
+            authed = get_authed_username(client)
 
             return convert_to_array(authed) unless user_list
 

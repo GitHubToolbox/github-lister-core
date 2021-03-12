@@ -23,6 +23,9 @@ Style/HashSyntax:
 Style/RaiseArgs:
     EnforcedStyle: compact
 
+Style/RedundantBegin:
+    Enabled: false
+
 Style/Semicolon:
     AllowAsExpressionSeparator: true
 

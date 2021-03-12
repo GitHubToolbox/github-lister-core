@@ -5,11 +5,17 @@ All notable changes to this project will be documented in this file.
 
 This changelog was automatically generated using [Caretaker](https://github.com/DevelopersToolbox/caretaker) by [Wolf Software](https://github.com/WolfSoftware)
 
+### [v0.1.3](https://github.com/DevelopersToolbox/github-lister-core/compare/v0.1.2...v0.1.3)
+
+> Released on March, 12th 2021
+
+- Added a begin->rescue->end to handle incorrect or expired PAT codes when looking up a username [`[head]`](https://github.com/DevelopersToolbox/github-lister-core/commit/)
+
 ### [v0.1.2](https://github.com/DevelopersToolbox/github-lister-core/compare/v0.1.1...v0.1.2)
 
 > Released on March, 10th 2021
 
-- Fixed error where additional information wasn't being decoded from sawyer::resource and returned as JSON [`[head]`](https://github.com/DevelopersToolbox/github-lister-core/commit/)
+- Fixed error where additional information wasn't being decoded from sawyer::resource and returned as JSON [`[5b77168]`](https://github.com/DevelopersToolbox/github-lister-core/commit/5b7716876aabd35b93f55bdc85b3145f9536044c)
 
 ### [v0.1.1](https://github.com/DevelopersToolbox/github-lister-core/compare/v0.1.0...v0.1.1)
 
