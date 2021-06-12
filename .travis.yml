@@ -1,11 +1,6 @@
 matrix:
   include:
   - language: ruby
-    name: Bundler (rvm 2.5)
-    rvm: 2.5
-    before_install:
-    - gem install bundler
-  - language: ruby
     name: Bundler (rvm 2.6)
     rvm: 2.6
     before_install:
@@ -20,15 +15,6 @@ matrix:
     rvm: 3.0
     before_install:
     - gem install bundler
-  - language: ruby
-    name: Rubocop (rvm 2.5)
-    rvm: 2.5
-    before_install:
-    - git clone https://github.com/TravisToolbox/rubocop.git
-    install:
-    - "./rubocop/install.sh"
-    script:
-    - "./rubocop/scan.sh"
   - language: ruby
     name: Rubocop (rvm 2.6)
     rvm: 2.6
@@ -56,15 +42,6 @@ matrix:
     - "./rubocop/install.sh"
     script:
     - "./rubocop/scan.sh"
-  - language: ruby
-    name: Reek (rvm 2.5)
-    rvm: 2.5
-    before_install:
-    - git clone https://github.com/TravisToolbox/reek.git
-    install:
-    - "./reek/install.sh"
-    script:
-    - "./reek/scan.sh"
   - language: ruby
     name: Reek (rvm 2.6)
     rvm: 2.6
@@ -126,4 +103,4 @@ matrix:
 notifications:
   email: false
   slack:
-    secure: raVXYK7FUcpti4hLpvhReyTolULPCkuDr8QUs/BTqedpqQI0mLIIDh7Nr99xI3gCpkM3BFfHf7jNNnwOdo0PtUHu40Gb/ndVmwSoa0PknnQGU7D020WoIVgGAn/S1HQwa+wkF5fcWdj8/uVBS8uZnXDRZiBLoepaiU64Ys/Ru0peiDzoHNYIuucV+mYb1CBpjA07qnnAgBvx6XNVmSSjCRAsxboWWdFQ41tBeF1AqQOKnRZUTOv3q+UJeEvSjxssKVwAVGzpknnJ0HNK6NThGmqdFEw5ZQjI70E6fNpUD9KCYq6jmFG5e7PUBXUbPoPLVh/8N338VXn56AJLJ+ypUwgifG4aKDaD8tsiTVxy9cjpq922L9LwXacVKY0gygpGVIe3IMpK/yanguQnOlOk4C8aHEQ4i3Zo04bTN0EQgqkvfy3N2J7wInJ/oyCoGo9qDetRguIcMAeIAsr6yCGOx6z6RNWHQ9uDBYGJ/OAJ3VFJn0gFWUrqoZhBBa8+eG1hdkfBKE9Z6lduxveKOiJCoztdhAXNioQv59DqqgReWtUV9UmrqyBtFgYAOQaUmhmtV5ttxTfu4nL1hFtHEv7IChrA72V3CaSZgesh4OkbE8hJYFn2H3EVxvq6i/1I2RpVYN/Wwewrys+LmCoU0jSWuyoPVrvV/azJbdb23sJDGYI=
+    secure: WrtNQR+lIRR6medI5hAMTJuFgzTduHhG5AplB7Hea85Ud9SggDDJdqlLzltO7bzMwSR4kVJzOFirdRpqpF5ZOyAm7+SWI1JHilPJeLQ0YA68mdao+vX9b6zSjxzcSRfBZuet3X82j0hmqEeEqVWe/Zf8r7uSGJUCx9ulxHEGu8LAw7rFuyf8XpP51R9g3A6OmFiV8DaFOH+8SMOK4zeBWOeqrnTXgYrFfzGYPOj/NruSiSTH/LSLYw6SfLcu4+vjQ0MeD7W9hMbpsvdtv+i27qbzrqoG11JkHUGym5SVkERErbg6M3UIM1qkKqpgBuem+eT9DkZP8pyaCNmWTQjo/b3yGtL8Ny3pX/xkTrhxWsOKiCVqHpeO1s4VYIDTCl68gAcYg9Y+je39k2kiUrwN3ksuEtYUvWzIdcoekKUbDQLJc6cMK4jD4DTugPHmXQCpmwVA59aeihGdzEUKFSIis4/hV5SNpsOOmzt5fcTsMRJFY9Jza/DxsLOnsHfqsktCIfXHCz3Loto+v+xVykn50lTitTDcGrl0gqBRa96sma45PmvJrvS8Ep6uLNhxzqnqcc687fmg4MQACfHr1G9lyXt9/UWovGDRAudbolH3RWWU04OHSJcJq0i/UP3FxHbdjnDxXbV1qyDb41O1bpHDSCfyV2GEknr/H2UDK81VXU0=
