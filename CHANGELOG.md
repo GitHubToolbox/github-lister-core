@@ -7,7 +7,9 @@ This changelog was automatically generated using [Caretaker](https://github.com/
 
 ### [Unreleased](https://github.com/DevelopersToolbox/github-lister-core/compare/v0.1.3...HEAD)
 
-- Remove ruby 2.5 support [`[head]`](https://github.com/DevelopersToolbox/github-lister-core/commit/)
+- Update travis slack integration due to new slack organisation [`[head]`](https://github.com/DevelopersToolbox/github-lister-core/commit/)
+
+- Remove ruby 2.5 support [`[2d44d88]`](https://github.com/DevelopersToolbox/github-lister-core/commit/2d44d888ec5f532336b9e1c588177591124d6b68)
 
 - Fix travis rvm versions and slack integration [`[80efe68]`](https://github.com/DevelopersToolbox/github-lister-core/commit/80efe68ddc3c547d15852dca62e7ba293ecab2d3)
 
