@@ -10,9 +10,7 @@ $LOAD_PATH.unshift('./lib')
 require 'bundler/setup'
 require 'github-lister-core'
 
-# rubocop:disable Lint/UselessAssignment
 config = { :token => 'Add token here' }
-# rubocop:enable Lint/UselessAssignment
 
 def count_results(results)
     puts JSON.parse(results).size
@@ -22,8 +20,8 @@ def display_results(results)
     puts JSON.pretty_generate(JSON.parse(results))
 end
 
-# count_results(GithubListerCore.user_repos(config))
-# display_results(GithubListerCore.user_repos(config))
+count_results(GithubListerCore.user_repos(config))
+display_results(GithubListerCore.user_repos(config))
 
 # count_results(GithubListerCore.org_repos(config))
 # display_results(GithubListerCore.org_repos(config))

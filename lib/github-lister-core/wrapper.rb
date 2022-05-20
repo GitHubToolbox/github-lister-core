@@ -18,12 +18,14 @@ class GithubListerCore
                 raise InvalidTokenError.new if client.user_authenticated?
 
                 raise MissingTokenError.new
+            rescue Octokit::SAMLProtected
+                raise SAMLProtected.new
             rescue Octokit::NotFound
                 raise NotFoundError.new
             rescue Octokit::TooManyRequests
                 raise TooManyRequests.new
-            rescue StandardError
-                raise UnknownError.new
+            rescue StandardError => exception
+                raise UnknownError.new(exception.to_s)
             end
             results || []
         end

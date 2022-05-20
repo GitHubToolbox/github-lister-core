@@ -6,8 +6,8 @@ class GithubListerCore
     # Catch all - something bad happened but we don't know what
     #
     class UnknownError < StandardError
-        def initialize
-            super('Something bad happen!')
+        def initialize(msg = 'Something bad happen!')
+            super
         end
     end
 
@@ -15,8 +15,8 @@ class GithubListerCore
     # User supplied an invalid token (instead of a missing token)
     #
     class InvalidTokenError < StandardError
-        def initialize
-            super('Invalid Token')
+        def initialize(msg = 'Invalid Token')
+            super
         end
     end
 
@@ -24,8 +24,17 @@ class GithubListerCore
     # User didn't supply a token but one was expected
     #
     class MissingTokenError < StandardError
-        def initialize
-            super('Missing Token - Please refer to https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token#creating-a-token')
+        def initialize(msg = 'Missing Token - Please refer to https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token#creating-a-token')
+            super
+        end
+    end
+
+    #
+    # Handle enterprise level tokens
+    #
+    class SAMLProtected < StandardError
+        def initialize(msg = 'Resource protected by organization SAML enforcement. You must grant your Personal Access token access to this organization.')
+            super
         end
     end
 
@@ -33,8 +42,8 @@ class GithubListerCore
     # Github rate limited us!
     #
     class TooManyRequests < StandardError
-        def initialize
-            super('Too Many Requests')
+        def initialize(msg = 'Too Many Requests')
+            super
         end
     end
 
@@ -42,8 +51,8 @@ class GithubListerCore
     # Generic 'not found' for users / orgs etc
     #
     class NotFoundError < StandardError
-        def initialize
-            super('Entity Not Found')
+        def initialize(msg = 'Entity Not Found')
+            super
         end
     end
 
@@ -51,8 +60,8 @@ class GithubListerCore
     # Docs to go here
     #
     class MissingOrganisationError < StandardError
-        def initialize
-            super('org_name MUST be passed as an option')
+        def initialize(msg = 'org_name MUST be passed as an option')
+            super
         end
     end
 
@@ -60,8 +69,8 @@ class GithubListerCore
     # Docs to go here
     #
     class InvalidOptionsHashError < StandardError
-        def initialize
-            super('Options must be passed as a hash')
+        def initialize(msg = 'Options must be passed as a hash')
+            super
         end
     end
 
@@ -69,8 +78,8 @@ class GithubListerCore
     # Must be string or array!
     #
     class InvalidParameterError < StandardError
-        def initialize
-            super('Value must be a string or an array')
+        def initialize(msg = 'Value must be a string or an array')
+            super
         end
     end
 end
