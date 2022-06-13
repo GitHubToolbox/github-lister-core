@@ -5,11 +5,17 @@ All notable changes to this project will be documented in this file.
 
 This changelog was automatically generated using [Caretaker](https://github.com/DevelopersToolbox/caretaker) by [Wolf Software](https://github.com/WolfSoftware)
 
+### [v0.1.6](https://github.com/DevelopersToolbox/github-lister-core/compare/v0.1.5...v0.1.6)
+
+> Released on June, 13th 2022
+
+- fix pakcage and git ignore [`[head]`](https://github.com/DevelopersToolbox/github-lister-core/commit/)
+
 ### [v0.1.5](https://github.com/DevelopersToolbox/github-lister-core/compare/v0.1.4...v0.1.5)
 
 > Released on June, 13th 2022
 
-- Added workflows [`[head]`](https://github.com/DevelopersToolbox/github-lister-core/commit/)
+- Added workflows [`[84a37a1]`](https://github.com/DevelopersToolbox/github-lister-core/commit/84a37a1b39c71a48f877d972a4bbdaea9571e39d)
 
 ### [v0.1.4](https://github.com/DevelopersToolbox/github-lister-core/compare/v0.1.3...v0.1.4)
 
