@@ -5,11 +5,17 @@ All notable changes to this project will be documented in this file.
 
 This changelog was automatically generated using [Caretaker](https://github.com/DevelopersToolbox/caretaker) by [Wolf Software](https://github.com/WolfSoftware)
 
+### [v0.1.5](https://github.com/DevelopersToolbox/github-lister-core/compare/v0.1.4...v0.1.5)
+
+> Released on June, 13th 2022
+
+- Added workflows [`[head]`](https://github.com/DevelopersToolbox/github-lister-core/commit/)
+
 ### [v0.1.4](https://github.com/DevelopersToolbox/github-lister-core/compare/v0.1.3...v0.1.4)
 
 > Released on May, 20th 2022
 
-- Added SAML error handling and also capture genereic error and surface the message [`[head]`](https://github.com/DevelopersToolbox/github-lister-core/commit/)
+- Added SAML error handling and also capture genereic error and surface the message [`[7b72478]`](https://github.com/DevelopersToolbox/github-lister-core/commit/7b72478d5de58b5dd862d04bf0d66345dc334b1c)
 
 - rebrand [`[c84ea27]`](https://github.com/DevelopersToolbox/github-lister-core/commit/c84ea270deed05ecdd3f483a7921e5260ef6b46d)
 

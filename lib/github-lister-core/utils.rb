@@ -89,6 +89,7 @@ class GithubListerCore
             repos = add_latest_release_private(client, repos) if flag_set?(options, :add_latest_release)
             repos = add_releases_private(client, repos) if flag_set?(options, :add_releases)
             repos = add_languages_private(client, repos) if flag_set?(options, :add_languages)
+            repos = add_workflows_private(client, repos) if flag_set?(options, :add_workflows)
             repos
         end
     end

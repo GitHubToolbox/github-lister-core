@@ -80,6 +80,7 @@ All of the exposed methods will return data in JSON format.
 | :add_latest_release | This will add information about the latest release to the details (Requires an additional look query per repo) |
 | :add_releases | This will add information about releases to the repository (Requires an additional look query per repo) |
 | :add_languages | This will add the repository languages to the details (Requires an additional look query per repo) |
+| :add_workflows | This will add the repository workflow information to the details (Requires an additional look query per repo) |
 
 > :user, :username, :org, :org_name can be either a single user/organisation name _OR_ a comma-separated list of user/organisation names _OR_ an array of user/organisation names. If more than one name is given, the results for all names will be merged together into one result set.
 

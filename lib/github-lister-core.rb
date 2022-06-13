@@ -19,6 +19,7 @@ require_relative 'github-lister-core/topics'
 require_relative 'github-lister-core/users'
 require_relative 'github-lister-core/utils'
 require_relative 'github-lister-core/version'
+require_relative 'github-lister-core/workflows'
 require_relative 'github-lister-core/wrapper'
 
 #
