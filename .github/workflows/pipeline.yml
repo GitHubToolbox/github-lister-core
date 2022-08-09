@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        ruby: [ '2.6', '2.7', '3.0', 'head' ]
+        ruby: [ '2.7', '3.0', '3.1', 'head' ]
     name: Bundler Test on Ruby ${{ matrix.ruby }}
     steps:
       - uses: actions/checkout@v2
@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        ruby: [ '2.6', '2.7', '3.0', 'head' ]
+        ruby: [ '2.7', '3.0', '3.1', 'head' ]
     name: Reek Test on Ruby ${{ matrix.ruby }}
     steps:
       - uses: actions/checkout@v2
@@ -36,7 +36,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        ruby: [ '2.6', '2.7', '3.0', 'head' ]
+        ruby: [ '2.7', '3.0', '3.1', 'head' ]
     name: Rubocop Test on Ruby ${{ matrix.ruby }}
     steps:
       - uses: actions/checkout@v2
@@ -51,10 +51,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Set up Ruby 3.0
+      - name: Set up Ruby 3.1
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.0
+          ruby-version: 3.1
       - name: Run Awesomebot
         env:
           FLAGS: "default"
@@ -73,10 +73,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Set up Ruby 3.0
+      - name: Set up Ruby 3.1
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.0
+          ruby-version: 3.1
       - name: Run YAML-Lint
         run: bash <(curl -s https://raw.githubusercontent.com/CICDToolbox/yaml-lint/master/pipeline.sh)
   slack-workflow-status:

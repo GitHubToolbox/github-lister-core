@@ -7,7 +7,9 @@ This changelog was automatically generated using [Caretaker](https://github.com/
 
 ### [Unreleased](https://github.com/DevelopersToolbox/github-lister-core/compare/v0.1.6...HEAD)
 
-- Add new feature to pull additional information about organisations [`[head]`](https://github.com/DevelopersToolbox/github-lister-core/commit/)
+- Update workflows to remove ruby 2.6 and add 3.1 [`[head]`](https://github.com/DevelopersToolbox/github-lister-core/commit/)
+
+- Add new feature to pull additional information about organisations [`[213a2fc]`](https://github.com/DevelopersToolbox/github-lister-core/commit/213a2fc0a866e697b48ae276244332f494e09f18)
 
 ### [v0.1.5](https://github.com/DevelopersToolbox/github-lister-core/compare/v0.1.4...v0.1.5)
 
