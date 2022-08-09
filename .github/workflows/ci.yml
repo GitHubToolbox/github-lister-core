@@ -1,6 +1,6 @@
-name: pipeline
+name: CI/CD Pipeline
 on: [push, pull_request]
-    
+
 jobs:
   bundler:
     runs-on: ubuntu-latest
@@ -92,8 +92,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Slack Post Workflow Notification
-        uses: Gamesight/slack-workflow-status@master
+        uses: come25136/workflow-notification-for-slack@main
         with:
-          include_jobs: true
           repo_token: ${{secrets.GITHUB_TOKEN}}
           slack_webhook_url: ${{secrets.SLACK_WEBHOOK_URL}}
+          include_jobs: on-failure
+

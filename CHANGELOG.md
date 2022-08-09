@@ -7,7 +7,9 @@ This changelog was automatically generated using [Caretaker](https://github.com/
 
 ### [Unreleased](https://github.com/DevelopersToolbox/github-lister-core/compare/v0.1.6...HEAD)
 
-- Update workflows to remove ruby 2.6 and add 3.1 [`[head]`](https://github.com/DevelopersToolbox/github-lister-core/commit/)
+- Update the workflow slack integration and add delete workflows [`[head]`](https://github.com/DevelopersToolbox/github-lister-core/commit/)
+
+- Update workflows to remove ruby 2.6 and add 3.1 [`[422ff05]`](https://github.com/DevelopersToolbox/github-lister-core/commit/422ff05113a49603d73d04edcdc1554076c5819b)
 
 - Add new feature to pull additional information about organisations [`[213a2fc]`](https://github.com/DevelopersToolbox/github-lister-core/commit/213a2fc0a866e697b48ae276244332f494e09f18)
 
