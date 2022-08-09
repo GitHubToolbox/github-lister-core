@@ -2,7 +2,11 @@
 # Require the external gems
 #
 require 'json'
+
+ENV['OCTOKIT_SILENT'] = '1'
 require 'octokit'
+ENV.delete('OCTOKIT_SILENT')
+
 require 'parallel'
 
 #
@@ -29,7 +33,8 @@ require_relative 'github-lister-core/wrapper'
 class GithubListerCore
     class << self
         #
-        # stuff goes here
+        # Get a list of repos got a given user
+        # If the user is authenticated it will list private + public
         #
         def user_repos(options = {})
             validate_options(options)
@@ -76,7 +81,7 @@ class GithubListerCore
         end
 
         #
-        # Generate a slub list of repos for all organisations that a user is a member of
+        # Generate a list of repos for all organisations that a user is a member of
         #
         def all_repos(options = {})
             validate_options(options)
@@ -93,7 +98,6 @@ class GithubListerCore
         #
         # These are the public wrappers which return json encoded objects.
         #
-
         def org_membership(options = {})
             validate_options(options)
             client = init_client(options)
@@ -102,7 +106,7 @@ class GithubListerCore
             if flag_set?(options, :use_slugs)
                 org_membership_slugs_private(client, users).to_json
             else
-                org_membership_private(client, users).to_json
+                org_membership_private(client, users, options).to_json
             end
         end
     end

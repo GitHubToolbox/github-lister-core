@@ -10,7 +10,7 @@ $LOAD_PATH.unshift('./lib')
 require 'bundler/setup'
 require 'github-lister-core'
 
-config = { :token => 'Add token here' }
+config = { :token => 'PUT YOUR TOKEN HERE' }
 
 def count_results(results)
     puts JSON.parse(results).size

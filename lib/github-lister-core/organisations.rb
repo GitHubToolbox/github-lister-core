@@ -31,7 +31,6 @@ class GithubListerCore
         # Get a list of organisations that a user is a member of
         #
         # This method smells of :reek:DuplicateMethodCall
-
         def org_repos_from_github(client, org)
             function_wrapper(client, 'organization_repositories', org)
         end
@@ -42,8 +41,8 @@ class GithubListerCore
         end
 
         # Get the org list for a list of users
-        def org_membership_from_github(client, org)
-            function_wrapper(client, 'organizations', org)
+        def org_membership_from_github(client, user)
+            function_wrapper(client, 'organizations', user)
         end
 
         def org_membership_in_parallel(client, users)
@@ -51,8 +50,20 @@ class GithubListerCore
             clean_from_parallel(orgs, :login)
         end
 
-        def org_membership_private(client, users)
-            org_membership_in_parallel(client, users)
+        # Get information about a specific org
+        def org_details_from_github(client, org)
+            function_wrapper(client, 'organization', org[:login])
+        end
+
+        def org_details_in_parallel(client, orgs)
+            (org_details ||= []) << Parallel.map(orgs, :in_threads => orgs.count) { |org| org_details_from_github(client, org) }
+            clean_from_parallel(org_details, :login)
+        end
+
+        def org_membership_private(client, users, options)
+            orgs = org_membership_in_parallel(client, users)
+            orgs = org_details_in_parallel(client, orgs) if flag_set?(options, :detailed_orgs)
+            orgs
         end
 
         def org_membership_slugs_private(client, users)

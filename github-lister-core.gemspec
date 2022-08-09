@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
     spec.homepage      = 'https://github.com/DevelopersToolbox/github-lister-core'
     spec.license       = 'MIT'
 
-    spec.required_ruby_version = Gem::Requirement.new('>= 2.5.0')
+    spec.required_ruby_version = Gem::Requirement.new('>= 2.7.0')
 
     spec.metadata['homepage_uri'] = spec.homepage
     spec.metadata['source_code_uri'] = 'https://github.com/DevelopersToolbox/github-lister-core'
@@ -33,13 +33,13 @@ Gem::Specification.new do |spec|
     spec.require_paths = ['lib']
 
     spec.add_development_dependency 'bundler', '~> 2'
-    spec.add_development_dependency 'octokit', '~> 4'
+    spec.add_development_dependency 'octokit', '~> 5'
     spec.add_development_dependency 'parallel', '~> 1.2'
     spec.add_development_dependency 'rake', '~> 12'
     spec.add_development_dependency 'reek', '~> 6'
     spec.add_development_dependency 'rspec', '~> 3.0'
     spec.add_development_dependency 'rubocop', '~> 1.11.0'
 
-    spec.add_runtime_dependency 'octokit', '~> 4'
+    spec.add_runtime_dependency 'octokit', '~> 5'
     spec.add_runtime_dependency 'parallel', '~> 1.2'
 end

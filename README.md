@@ -33,13 +33,19 @@
 
 ## Overview
 
-The gem aims to provide a simple, fast and, clean way to extract repository information from GitHub. It comes with several methods but it is intentionally limited to repository based information. 
-
-If you are looking for a GitHub API wrapper we suggest looking at the [Octokit](https://rubygems.org/gems/octokit) gem, which is the tool we have used in this project.
+The gem aims to provide a simple, fast and, clean way to extract organisation and repository information from GitHub. It comes with several methods but it is intentionally limited. 
 
 This was written to work as the lookup core for some other projects, but we felt people may be able to make use of it as a standalone library.
 
-To make the lookups as fast as possible we make extensive use of the [Parallel](https://rubygems.org/gems/parallel) gem to run as many API queries as possible in parallel.
+### External Libraries
+
+We make use of a number of external (3<sup>rd</sup> party) gems within this project.
+
+| Name | Source | Purpose |
+| ---- | ------ | ------- |
+| Octokit | [rubygems.org](https://rubygems.org/gems/octokit) | Simple wrapper for the GitHub API |
+| Parallel | [rubygems.org](https://rubygems.org/gems/parallel) | Run any kind of code in parallel processes |
+
 
 ## Usage
 
@@ -68,6 +74,20 @@ GithubListerCore.user_repos(options)
 
 All of the exposed methods will return data in JSON format.
 
+#### Exceptions
+
+| Name | Meaning |
+| ---- | ------- |
+| GithubListerCore::InvalidTokenError | An invalid GitHub PAT was used |
+| GithubListerCore::MissingTokenError | No GitHub PAT was supplied when expected |
+| GithubListerCore::SAMLProtected | GitHub PAT not granted access to specific organisation |
+| GithubListerCore::TooManyRequests | To many requests made to the GitHub API |
+| GithubListerCore::NotFoundError | Requested entity not found (e.g. username or org name) |
+| GithubListerCore::MissingOrganisationError | Organisation name not supplied when expected |
+| GithubListerCore::InvalidOptionsHashError | The options were not passed as a hash |
+| GithubListerCore::InvalidParameterError | The parameter was not supplied as a string or array as expected |
+| GithubListerCore::UnknownError | General 'something bad happened' error |
+
 ### Options
 
 | Option Name | Purpose |
@@ -76,11 +96,12 @@ All of the exposed methods will return data in JSON format.
 | :user or :username | The GitHub username to use when performing queries (If no username is given, the username of the current authenticates user will be used instead) |
 | :org or :org_name | The name of the organisation to use when performing queries. (This is only used by the org_repos method and is required for this method) |
 | :use_slugs | This will return only the repo name (:full_name) or the organisation name (:login) instead of the full details |
-| :add_topics | This will add the repository topics to the details (Requires an additional look query per repo) |
-| :add_latest_release | This will add information about the latest release to the details (Requires an additional look query per repo) |
-| :add_releases | This will add information about releases to the repository (Requires an additional look query per repo) |
-| :add_languages | This will add the repository languages to the details (Requires an additional look query per repo) |
-| :add_workflows | This will add the repository workflow information to the details (Requires an additional look query per repo) |
+| :add_topics | This will add the repository topics to the details (Requires an additional API query per repo) |
+| :add_latest_release | This will add information about the latest release to the details (Requires an additional API query per repo) |
+| :add_releases | This will add information about releases to the repository (Requires an additional API query per repo) |
+| :add_languages | This will add the repository languages to the details (Requires an additional API query per repo) |
+| :add_workflows | This will add the repository workflow information to the details (Requires an additional API query per repo) |
+| :detailed_orgs | This will return the full details about an organisation instead of the default abridged version. (Requires an additional API query per organisation) |
 
 > :user, :username, :org, :org_name can be either a single user/organisation name _OR_ a comma-separated list of user/organisation names _OR_ an array of user/organisation names. If more than one name is given, the results for all names will be merged together into one result set.
 
@@ -101,3 +122,18 @@ To install this gem onto your local machine, run `bundle exec rake install`.
 For local testing make sure that you run `bundle exec rspec spec` and then `rake install` to install the gem locally.
 
 For further information please refer to the [contributing](.github/CONTRIBUTING.md) documentation.
+
+## Coming soon
+
+There are a number of additional features that we are planning to add in the coming months. All of which will be new options that can be passed to the main methods.
+
+| Feature | Details |
+| ------- | ------- |
+| Regex matching | Ability to filter returned organisations and repositories based on regex |
+| Organisation members | Optionally retrieve a list of members within organisations |
+| Outside collaborators | Optionally retrieve a list of outside collaborators within organisations |
+| Teams | Optionally retrieve a list of teams within organisations |
+| Team members | Optionally retrieve a list team members for teams within organisations |
+| Team repositories | List repositories for a given team<sup>1</sup> |
+
+> <sup>1</sup> This can be used the same way as user and organisation listing.

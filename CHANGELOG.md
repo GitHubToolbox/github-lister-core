@@ -5,19 +5,23 @@ All notable changes to this project will be documented in this file.
 
 This changelog was automatically generated using [Caretaker](https://github.com/DevelopersToolbox/caretaker) by [Wolf Software](https://github.com/WolfSoftware)
 
-### [v0.1.6](https://github.com/DevelopersToolbox/github-lister-core/compare/v0.1.5...v0.1.6)
+### [Unreleased](https://github.com/DevelopersToolbox/github-lister-core/compare/v0.1.6...HEAD)
 
-> Released on June, 13th 2022
-
-- fix pakcage and git ignore [`[head]`](https://github.com/DevelopersToolbox/github-lister-core/commit/)
+- Add new feature to pull additional information about organisations [`[head]`](https://github.com/DevelopersToolbox/github-lister-core/commit/)
 
 ### [v0.1.5](https://github.com/DevelopersToolbox/github-lister-core/compare/v0.1.4...v0.1.5)
 
 > Released on June, 13th 2022
 
-- Added workflows [`[84a37a1]`](https://github.com/DevelopersToolbox/github-lister-core/commit/84a37a1b39c71a48f877d972a4bbdaea9571e39d)
+- fix pakcage and git ignore [`[c79475f]`](https://github.com/DevelopersToolbox/github-lister-core/commit/c79475fcb9084d9b74ddad2fde1db28a8f059336)
 
 ### [v0.1.4](https://github.com/DevelopersToolbox/github-lister-core/compare/v0.1.3...v0.1.4)
+
+> Released on June, 13th 2022
+
+- Added workflows [`[84a37a1]`](https://github.com/DevelopersToolbox/github-lister-core/commit/84a37a1b39c71a48f877d972a4bbdaea9571e39d)
+
+### [v0.1.3](https://github.com/DevelopersToolbox/github-lister-core/compare/v0.1.2...v0.1.3)
 
 > Released on May, 20th 2022
 
@@ -31,27 +35,23 @@ This changelog was automatically generated using [Caretaker](https://github.com/
 
 - Fix travis rvm versions and slack integration [`[80efe68]`](https://github.com/DevelopersToolbox/github-lister-core/commit/80efe68ddc3c547d15852dca62e7ba293ecab2d3)
 
-### [v0.1.3](https://github.com/DevelopersToolbox/github-lister-core/compare/v0.1.2...v0.1.3)
+### [v0.1.2](https://github.com/DevelopersToolbox/github-lister-core/compare/v0.1.1...v0.1.2)
 
 > Released on March, 12th 2021
 
 - Added a begin->rescue->end to handle incorrect or expired PAT codes when looking up a username [`[820d5af]`](https://github.com/DevelopersToolbox/github-lister-core/commit/820d5af0a75f96ddd20d9cf6cde0ab9c1fa404ba)
 
-### [v0.1.2](https://github.com/DevelopersToolbox/github-lister-core/compare/v0.1.1...v0.1.2)
+### [v0.1.1](https://github.com/DevelopersToolbox/github-lister-core/compare/v0.1.0...v0.1.1)
 
 > Released on March, 10th 2021
 
 - Fixed error where additional information wasn't being decoded from sawyer::resource and returned as JSON [`[5b77168]`](https://github.com/DevelopersToolbox/github-lister-core/commit/5b7716876aabd35b93f55bdc85b3145f9536044c)
 
-### [v0.1.1](https://github.com/DevelopersToolbox/github-lister-core/compare/v0.1.0...v0.1.1)
+### [v0.1.0](https://github.com/DevelopersToolbox/github-lister-core/releases/v0.1.0)
 
 > Released on March, 8th 2021
 
 - Fixing a couple of errors that slipped passed QA testing [`[680fb05]`](https://github.com/DevelopersToolbox/github-lister-core/commit/680fb05098074f347e2057b5c1d444ccb046a709)
-
-### [v0.1.0](https://github.com/DevelopersToolbox/github-lister-core/releases/v0.1.0)
-
-> Released on March, 8th 2021
 
 - The initial commit [`[2f25c81]`](https://github.com/DevelopersToolbox/github-lister-core/commit/2f25c819acbb77e3dfd31351b4d891bd5f426587)
 

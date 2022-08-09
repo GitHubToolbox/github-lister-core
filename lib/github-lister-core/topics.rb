@@ -13,7 +13,7 @@ class GithubListerCore
         # Extra the topics slug from the payload and return it
         #
         def topics_private(client, repo)
-            topics = function_wrapper(client, 'topics', repo, { :accept => Octokit::Preview::PREVIEW_TYPES[:topics] })
+            topics = function_wrapper(client, 'topics', repo)
             topics[:names]
         end
 
