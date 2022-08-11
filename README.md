@@ -62,13 +62,16 @@ GithubListerCore.user_repos(options)
 
 ### Methods
 
-| Function | Purpose |
-| -------- | ------- |
-| user\_repos | Details about all of the repositories owned by the user |
-| org\_repos | Details about all repositories within an organisation |
-| org\_members_repos | Details about all repositories in all organisations a user is a member of |
+> Work out the parameters for each of these!
+
+| Function | Parameters | Purpose |
+| -------- | ---------- | ------- |
 | all\_repos | user\_repos + user\_org\_repos |
-| org\_membership | Details about all the organisation a user is a member of | 
+| org\_members_repos | Details about all repositories in all organisations a user is a member of |
+| org\_membership | Details about all the organisation a user is a member of (authenticated user or parameter)| 
+| org\_repos | Details about all repositories within an organisation passed via :org or :org_name |
+| user\_repos | Authenticated username, :user, users, :username or :usernames | Details about all of the repositories owned by the user |
+| validate_user | User list | Validate users list of users, and returns a hash of all usernames and their validity status |
 
 #### Method Returns
 
@@ -90,20 +93,25 @@ All of the exposed methods will return data in JSON format.
 
 ### Options
 
-| Option Name | Purpose |
-| ----------- | ------- |
-| :token | The GitHub authentication token (require if no username) |
-| :user or :username | The GitHub username to use when performing queries (If no username is given, the username of the current authenticates user will be used instead) |
-| :org or :org_name | The name of the organisation to use when performing queries. (This is only used by the org_repos method and is required for this method) |
-| :use_slugs | This will return only the repo name (:full_name) or the organisation name (:login) instead of the full details |
-| :add_topics | This will add the repository topics to the details (Requires an additional API query per repo) |
-| :add_latest_release | This will add information about the latest release to the details (Requires an additional API query per repo) |
-| :add_releases | This will add information about releases to the repository (Requires an additional API query per repo) |
-| :add_languages | This will add the repository languages to the details (Requires an additional API query per repo) |
-| :add_workflows | This will add the repository workflow information to the details (Requires an additional API query per repo) |
-| :detailed_orgs | This will return the full details about an organisation instead of the default abridged version. (Requires an additional API query per organisation) |
+| Option Name | Type | Default Value | Purpose |
+| ----------- | ---- | ------------- | ------- |
+| :add\_languages | Boolean | false | This will add the repository languages to the details (Requires an additional API query per repo) |
+| :add\_latest\_release | Boolean | false | This will add information about the latest release to the details (Requires an additional API query per repo) |
+| :add\_releases | Boolean | false | This will add information about releases to the repository (Requires an additional API query per repo) |
+| :add\_topics | Boolean | false | This will add the repository topics to the details (Requires an additional API query per repo) |
+| :add\_workflows | Boolean | false | This will add the repository workflow information to the details (Requires an additional API query per repo) |
+| :detailed\_orgs | Boolean | false | This will return the full details about an organisation instead of the default abridged version. (Requires an additional API query per organisation) |
+| :org or :org\_name | String | unset | The name of the organisation to use when performing queries. (This is only used by the org_repos method and is required for this method) |
+| :org\_regex | String | unset | This is the regex pattern you want to use to filter the results for organisations by name |
+| :org\_regex\_nocase | Boolean | false | Set to true to make organisation name regex matching case insensitive | 
+| :regex\_nocase | Boolean | false | Set to true to make **ALL** regex matching case insensitive | 
+| :repo\_regex | String | unset | This is the regex pattern you want to use to filter the results for repositories by name |
+| :repo\_regex\_nocase | Boolean | false | Set to true to make repository name regex matching case insensitive | 
+| :token | String | unset | The GitHub authentication token (require if no username) |
+| :use\_slugs | Boolean | false | This will return only the repo name (:full\_name) or the organisation name (:login) instead of the full details |
+| :user, :users, :username or :usernames | String | unset | The GitHub username or names to use when performing queries (If no username is given, the username of the current authenticates user will be used instead) |
 
-> :user, :username, :org, :org_name can be either a single user/organisation name _OR_ a comma-separated list of user/organisation names _OR_ an array of user/organisation names. If more than one name is given, the results for all names will be merged together into one result set.
+> :user, :users, :username, :usernames, :org, :org_name can be either a single user/organisation name _OR_ a comma-separated list of user/organisation names _OR_ an array of user/organisation names. If more than one name is given, the results for all names will be merged together into one result set.
 
 ## Contributing
 
@@ -129,7 +137,6 @@ There are a number of additional features that we are planning to add in the com
 
 | Feature | Details |
 | ------- | ------- |
-| Regex matching | Ability to filter returned organisations and repositories based on regex |
 | Organisation members | Optionally retrieve a list of members within organisations |
 | Outside collaborators | Optionally retrieve a list of outside collaborators within organisations |
 | Teams | Optionally retrieve a list of teams within organisations |

@@ -45,9 +45,10 @@ class GithubListerCore
             function_wrapper(client, 'organizations', user)
         end
 
-        def org_membership_in_parallel(client, users)
+        def org_membership_in_parallel(client, users, options)
             (orgs ||= []) << Parallel.map(users, :in_threads => users.count) { |user| org_membership_from_github(client, user) }
-            clean_from_parallel(orgs, :login)
+            orgs = clean_from_parallel(orgs, :login)
+            handle_org_regex(orgs, options)
         end
 
         # Get information about a specific org
@@ -61,13 +62,13 @@ class GithubListerCore
         end
 
         def org_membership_private(client, users, options)
-            orgs = org_membership_in_parallel(client, users)
+            orgs = org_membership_in_parallel(client, users, options)
             orgs = org_details_in_parallel(client, orgs) if flag_set?(options, :detailed_orgs)
             orgs
         end
 
-        def org_membership_slugs_private(client, users)
-            org_membership_in_parallel(client, users).map { |hash| hash[:login] }.compact
+        def org_membership_slugs_private(client, users, options)
+            org_membership_in_parallel(client, users, options).map { |hash| hash[:login] }.compact
         end
     end
 end

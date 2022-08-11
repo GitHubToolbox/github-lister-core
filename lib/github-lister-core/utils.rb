@@ -82,6 +82,10 @@ class GithubListerCore
             true
         end
 
+        def get_flag(options, option)
+            flag_set?(options, option)
+        end
+
         def add_additional_info(client, options, repos)
             return repos if flag_set?(options, :use_slugs)
 

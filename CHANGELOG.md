@@ -7,7 +7,9 @@ This changelog was automatically generated using [Caretaker](https://github.com/
 
 ### [Unreleased](https://github.com/DevelopersToolbox/github-lister-core/compare/v0.1.6...HEAD)
 
-- Update the workflow slack integration and add delete workflows [`[head]`](https://github.com/DevelopersToolbox/github-lister-core/commit/)
+- Added basix regex options and new validate_user user stub. Also changed how multiple user/username optoins work - now merged rather than replaced [`[head]`](https://github.com/DevelopersToolbox/github-lister-core/commit/)
+
+- Update the workflow slack integration and add delete workflows [`[cb9abcb]`](https://github.com/DevelopersToolbox/github-lister-core/commit/cb9abcb654a91610eb8a27c713da730d8bf8d67e)
 
 - Update workflows to remove ruby 2.6 and add 3.1 [`[422ff05]`](https://github.com/DevelopersToolbox/github-lister-core/commit/422ff05113a49603d73d04edcdc1554076c5819b)
 

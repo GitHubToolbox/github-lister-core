@@ -1,10 +1,12 @@
 ---
 detectors:
-    TooManyStatements:
-        max_statements: 10
-    TooManyMethods:
-        max_methods: 20
     DataClump:
         enabled: false
+    LongParameterList:
+        max_params: 5
     NilCheck:
         enabled: false
+    TooManyMethods:
+        max_methods: 20
+    TooManyStatements:
+        max_statements: 10

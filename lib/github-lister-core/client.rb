@@ -14,6 +14,8 @@ class GithubListerCore
         # Initialise the client and set auto_paginate to true
         #
         def init_client(options = {})
+            validate_options(options)
+
             token = get_option(options, :token)
             client = if token
                          Octokit::Client.new(:access_token => token)

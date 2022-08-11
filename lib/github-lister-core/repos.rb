@@ -17,18 +17,19 @@ class GithubListerCore
             function_wrapper(client, 'repositories', user, { :type => 'owner', :accept => PREVIEW_TYPES[:visibility] })
         end
 
-        def user_repos_in_parallel(client, users)
+        def user_repos_in_parallel(client, users, options)
             (repos ||= []) << Parallel.map(users, :in_threads => users.count) { |user| user_repos_from_github(client, user) }
-            clean_from_parallel(repos, :full_name)
+            repos = clean_from_parallel(repos, :full_name)
+            handle_repo_regex(repos, options)
         end
 
-        def user_repos_private(client, options, users)
-            repos = user_repos_in_parallel(client, users)
+        def user_repos_private(client, users, options)
+            repos = user_repos_in_parallel(client, users, options)
             add_additional_info(client, options, repos)
         end
 
-        def user_repo_slugs_private(client, users)
-            repos = user_repos_in_parallel(client, users)
+        def user_repo_slugs_private(client, users, options)
+            repos = user_repos_in_parallel(client, users, options)
             repos.map { |hash| hash[:full_name] }.compact
         end
 
@@ -40,18 +41,19 @@ class GithubListerCore
             function_wrapper(client, 'organization_repositories', org)
         end
 
-        def org_repos_in_parallel(client, orgs)
+        def org_repos_in_parallel(client, orgs, options)
             (repos ||= []) << Parallel.map(orgs, :in_threads => orgs.count) { |org| org_repos_from_github(client, org) }
-            clean_from_parallel(repos, :full_name)
+            repos = clean_from_parallel(repos, :full_name)
+            handle_repo_regex(repos, options)
         end
 
-        def org_repos_private(client, options, orgs)
-            repos = org_repos_in_parallel(client, orgs)
+        def org_repos_private(client, orgs, options)
+            repos = org_repos_in_parallel(client, orgs, options)
             add_additional_info(client, options, repos)
         end
 
-        def org_repo_slugs_private(client, orgs)
-            repos = org_repos_in_parallel(client, orgs)
+        def org_repo_slugs_private(client, orgs, options)
+            repos = org_repos_in_parallel(client, orgs, options)
             repos.map { |hash| hash[:full_name] }.compact
         end
 
@@ -60,20 +62,20 @@ class GithubListerCore
         # member of                                                            #
         ########################################################################
 
-        def org_members_repos_private(client, options, users)
-            orgs = org_membership_slugs_private(client, users)
-            repos = org_repos_in_parallel(client, orgs)
+        def org_members_repos_private(client, users, options)
+            orgs = org_membership_slugs_private(client, users, options)
+            repos = org_repos_in_parallel(client, orgs, options)
             add_additional_info(client, options, repos)
         end
 
-        def org_members_repo_slugs_private(client, users)
-            orgs = org_membership_slugs_private(client, users)
-            repos = org_repos_in_parallel(client, orgs)
+        def org_members_repo_slugs_private(client, users, options)
+            orgs = org_membership_slugs_private(client, users, options)
+            repos = org_repos_in_parallel(client, orgs, options)
             repos.map { |hash| hash[:full_name] }.compact
         end
 
         #
-        # Generate a slub list of repos for all organisations that a user is a member of
+        # Generate a slug list of repos for all organisations that a user is a member of
         #
         def all_repos_private(client, options, users)
             repos = user_repos_private(client, options, users) + org_members_repos_private(client, options, users)

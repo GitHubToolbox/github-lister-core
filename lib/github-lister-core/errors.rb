@@ -60,7 +60,7 @@ class GithubListerCore
     # Docs to go here
     #
     class MissingOrganisationError < StandardError
-        def initialize(msg = 'org_name MUST be passed as an option')
+        def initialize(msg = ':org or :org_name MUST be passed as an option')
             super
         end
     end
