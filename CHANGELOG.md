@@ -7,7 +7,9 @@ This changelog was automatically generated using [Caretaker](https://github.com/
 
 ### [Unreleased](https://github.com/DevelopersToolbox/github-lister-core/compare/v0.1.6...HEAD)
 
-- Added basix regex options and new validate_user user stub. Also changed how multiple user/username optoins work - now merged rather than replaced [`[head]`](https://github.com/DevelopersToolbox/github-lister-core/commit/)
+- Workflows and dependabot [`[head]`](https://github.com/DevelopersToolbox/github-lister-core/commit/)
+
+- Added basix regex options and new validate_user user stub. Also changed how multiple user/username optoins work - now merged rather than replaced [`[d7e370f]`](https://github.com/DevelopersToolbox/github-lister-core/commit/d7e370f6d1f2a2982ec8481a2ba561a5cb42dfb3)
 
 - Update the workflow slack integration and add delete workflows [`[cb9abcb]`](https://github.com/DevelopersToolbox/github-lister-core/commit/cb9abcb654a91610eb8a27c713da730d8bf8d67e)
 

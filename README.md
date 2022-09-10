@@ -3,8 +3,8 @@
         <img src="https://cdn.wolfsoftware.com/assets/images/github/organisations/developerstoolbox/black-and-white-circle-256.png" alt="DevelopersToolbox logo" />
     </a>
     <br />
-    <a href="https://github.com/DevelopersToolbox/github-lister-core/actions/workflows/pipeline.yml">
-        <img src="https://img.shields.io/github/workflow/status/DevelopersToolbox/github-lister-core/pipeline/master?style=for-the-badge" alt="Github Build Status">
+    <a href="https://github.com/DevelopersToolbox/github-lister-core/actions/workflows/cicd-pipeline.yml">
+        <img src="https://img.shields.io/github/workflow/status/DevelopersToolbox/github-lister-core/CICD%20Pipeline/master?style=for-the-badge" alt="Github Build Status">
     </a>
     <a href="https://github.com/DevelopersToolbox/github-lister-core/releases/latest">
         <img src="https://img.shields.io/github/v/release/DevelopersToolbox/github-lister-core?color=blue&label=Latest%20Release&style=for-the-badge" alt="Release">
