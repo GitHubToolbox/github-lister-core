@@ -7,7 +7,9 @@ This changelog was automatically generated using [Caretaker](https://github.com/
 
 ### [Unreleased](https://github.com/DevelopersToolbox/github-lister-core/compare/v0.1.6...HEAD)
 
-- Fix gitignore to ignore gem file [`[head]`](https://github.com/DevelopersToolbox/github-lister-core/commit/)
+- Add greetings [`[head]`](https://github.com/DevelopersToolbox/github-lister-core/commit/)
+
+- Fix gitignore to ignore gem file [`[441b36a]`](https://github.com/DevelopersToolbox/github-lister-core/commit/441b36a39e10ed431a14ad7726e04bb21444aaf9)
 
 - Fix gitignore to ignore gem file [`[a8c969c]`](https://github.com/DevelopersToolbox/github-lister-core/commit/a8c969cb676a99e1508ae86e8f060c02f3beb010)
 
