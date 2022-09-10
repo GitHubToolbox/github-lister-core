@@ -9,6 +9,8 @@ This changelog was automatically generated using [Caretaker](https://github.com/
 
 - Fix gitignore to ignore gem file [`[head]`](https://github.com/DevelopersToolbox/github-lister-core/commit/)
 
+- Fix gitignore to ignore gem file [`[a8c969c]`](https://github.com/DevelopersToolbox/github-lister-core/commit/a8c969cb676a99e1508ae86e8f060c02f3beb010)
+
 - Update rake requirement from ~> 12 to ~> 13 [`[#3]`](https://github.com/DevelopersToolbox/github-lister-core/pull/3)
 
 - Bump octokit from 5.2.0 to 5.4.0 [`[#2]`](https://github.com/DevelopersToolbox/github-lister-core/pull/2)
