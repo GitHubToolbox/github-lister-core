@@ -7,7 +7,49 @@ This changelog was automatically generated using [Caretaker](https://github.com/
 
 ### [Unreleased](https://github.com/DevelopersToolbox/github-lister-core/compare/v0.1.6...HEAD)
 
-- Workflows and dependabot [`[head]`](https://github.com/DevelopersToolbox/github-lister-core/commit/)
+- Fix gitignore to ignore gem file [`[head]`](https://github.com/DevelopersToolbox/github-lister-core/commit/)
+
+- Update rake requirement from ~> 12 to ~> 13 [`[#3]`](https://github.com/DevelopersToolbox/github-lister-core/pull/3)
+
+- Bump octokit from 5.2.0 to 5.4.0 [`[#2]`](https://github.com/DevelopersToolbox/github-lister-core/pull/2)
+
+Bumps [octokit](https://github.com/octokit/octokit.rb) from 5.2.0 to 5.4.0.
+- [Release notes](https://github.com/octokit/octokit.rb/releases)
+- [Changelog](https://github.com/octokit/octokit.rb/blob/main/RELEASE.md)
+- [Commits](https://github.com/octokit/octokit.rb/compare/v5.2.0...v5.4.0)
+
+---
+updated-dependencies:
+- dependency-name: octokit
+ dependency-type: direct:production
+ update-type: version-update:semver-minor
+...
+
+Signed-off-by: dependabot[bot] <support@github.com>
+
+Signed-off-by: dependabot[bot] <support@github.com>
+Co-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
+
+- Update rubocop requirement from ~> 1.11.0 to ~> 1.36.0 [`[#1]`](https://github.com/DevelopersToolbox/github-lister-core/pull/1)
+
+Updates the requirements on [rubocop](https://github.com/rubocop/rubocop) to permit the latest version.
+- [Release notes](https://github.com/rubocop/rubocop/releases)
+- [Changelog](https://github.com/rubocop/rubocop/blob/master/CHANGELOG.md)
+- [Commits](https://github.com/rubocop/rubocop/compare/v1.11.0...v1.36.0)
+
+---
+updated-dependencies:
+- dependency-name: rubocop
+ dependency-type: direct:development
+ update-type: version-update:semver-minor
+...
+
+Signed-off-by: dependabot[bot] <support@github.com>
+
+Signed-off-by: dependabot[bot] <support@github.com>
+Co-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
+
+- Workflows and dependabot [`[b39ac5e]`](https://github.com/DevelopersToolbox/github-lister-core/commit/b39ac5e15394904be5349c3d6d49d9e0fd590d04)
 
 - Added basix regex options and new validate_user user stub. Also changed how multiple user/username optoins work - now merged rather than replaced [`[d7e370f]`](https://github.com/DevelopersToolbox/github-lister-core/commit/d7e370f6d1f2a2982ec8481a2ba561a5cb42dfb3)
 

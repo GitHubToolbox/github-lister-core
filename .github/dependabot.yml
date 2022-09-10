@@ -16,6 +16,6 @@ updates:
       interval: "daily"
     open-pull-requests-limit: 10
     labels:
-      - "dependabot: lang : github actions"
+      - "dependabot: lang : ruby"
       - "dependabot: dependencies"
 

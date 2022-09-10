@@ -1,2 +1,4 @@
 **/.DS-Store
 **/ab-results*
+.rspec_status
+*.gem
