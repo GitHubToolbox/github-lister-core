@@ -60,8 +60,7 @@ class GithubListerCore
         end
 
         def get_option(options, names)
-            return nil unless options
-            return nil unless options.is_a?(Hash)
+            return nil unless options&.respond_to?(:to_h)
 
             case names
             when Array

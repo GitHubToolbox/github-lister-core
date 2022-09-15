@@ -10,13 +10,21 @@ class GithubListerCore
 
         private
 
+        def get_real_username(user)
+            return user.login if user.is_a?(Sawyer::Resource)
+
+            user
+        end
+
         def user_details_from_github(client, user)
+            username = get_real_username(user)
+
             begin
                 function_wrapper(client, 'user', user)
             rescue GithubListerCore::NotFoundError
-                status = { user => 'invalid' }
+                status = { username => 'invalid' }
             else
-                status = { user => 'valid' }
+                status = { username => 'valid' }
             end
             status
         end
@@ -41,6 +49,7 @@ class GithubListerCore
                 user_list.delete_if { |user| user.downcase == authed.login.downcase }
                 user_list.append(authed)
             end
+
             user_list
         end
 
@@ -58,7 +67,7 @@ class GithubListerCore
         def get_user_list_internal(client, user_list)
             authed = get_authed_username(client)
 
-            return convert_to_array(authed) unless user_list
+            return convert_to_array(authed) if user_list.empty?
 
             case user_list
             when Array, String
@@ -80,9 +89,10 @@ class GithubListerCore
         def get_user_list(client, options)
             user_list = get_complete_user_list_array(options)
 
-            user_list = get_user_list_internal(client, user_list)
-
+            # We have to sort BEFORE we swap the authed user for the client.user object
             user_list.sort
+
+            get_user_list_internal(client, user_list)
         end
     end
 end

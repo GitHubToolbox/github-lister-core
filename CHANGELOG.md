@@ -9,6 +9,8 @@ This changelog was automatically generated using [Caretaker](https://github.com/
 
 - smell fix [`[head]`](https://github.com/DevelopersToolbox/github-lister-core/commit/)
 
+- smell fix [`[a5cad8a]`](https://github.com/DevelopersToolbox/github-lister-core/commit/a5cad8abe88c81f60c56511e6caa1e0ae0c52862)
+
 - smell fix [`[550bd57]`](https://github.com/DevelopersToolbox/github-lister-core/commit/550bd57375e70066341525c9fe01941f426f8723)
 
 - Bump octokit from 5.5.0 to 5.6.1 [`[#6]`](https://github.com/DevelopersToolbox/github-lister-core/pull/6)

@@ -12,9 +12,11 @@ class GithubListerCore
         def latest_release_private(client, repo)
             begin
                 release = function_wrapper(client, 'latest_release', repo)
+            # rubocop:disable Style/RescueStandardError
             rescue
                 return {}
             end
+            # rubocop:enable Style/RescueStandardError
             decode_sawyer_resource(release) || {}
         end
 
@@ -33,10 +35,11 @@ class GithubListerCore
         def releases_private(client, repo)
             begin
                 releases = function_wrapper(client, 'releases', repo)
-            # rubocop:disable Lint/SuppressedException
-            rescue NotFoundError => _exception
+            # rubocop:disable Style/RescueStandardError
+            rescue
+                return []
             end
-            # rubocop:enable Lint/SuppressedException
+            # rubocop:enable Style/RescueStandardError
             decode_sawyer_resource(releases) || []
         end
 
