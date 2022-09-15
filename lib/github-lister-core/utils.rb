@@ -68,6 +68,8 @@ class GithubListerCore
                 value = look_for_option_from_array(options, names)
             when String, Symbol
                 value = options[names] if options.key?(names)
+            else
+                value = nil
             end
             value || nil
         end

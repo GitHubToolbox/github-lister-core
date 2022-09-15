@@ -12,10 +12,9 @@ class GithubListerCore
         def latest_release_private(client, repo)
             begin
                 release = function_wrapper(client, 'latest_release', repo)
-            # rubocop:disable Lint/SuppressedException
-            rescue NotFoundError => _exception
+            rescue
+                return {}
             end
-            # rubocop:enable Lint/SuppressedException
             decode_sawyer_resource(release) || {}
         end
 
