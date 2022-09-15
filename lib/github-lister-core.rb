@@ -42,7 +42,7 @@ class GithubListerCore
         #
         def validate_user(options = {})
             client = init_client(options)
-            users = get_user_list_no_authed_replace(client, options)
+            users = get_user_list(client, options)
 
             validate_user_private(client, users).to_json
         end

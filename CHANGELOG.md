@@ -7,7 +7,49 @@ This changelog was automatically generated using [Caretaker](https://github.com/
 
 ### [Unreleased](https://github.com/DevelopersToolbox/github-lister-core/compare/v0.1.6...HEAD)
 
-- Add greetings [`[head]`](https://github.com/DevelopersToolbox/github-lister-core/commit/)
+- smell fix [`[head]`](https://github.com/DevelopersToolbox/github-lister-core/commit/)
+
+- Bump octokit from 5.5.0 to 5.6.1 [`[#6]`](https://github.com/DevelopersToolbox/github-lister-core/pull/6)
+
+Bumps [octokit](https://github.com/octokit/octokit.rb) from 5.5.0 to 5.6.1.
+- [Release notes](https://github.com/octokit/octokit.rb/releases)
+- [Changelog](https://github.com/octokit/octokit.rb/blob/main/RELEASE.md)
+- [Commits](https://github.com/octokit/octokit.rb/compare/v5.5.0...v5.6.1)
+
+---
+updated-dependencies:
+- dependency-name: octokit
+ dependency-type: direct:production
+ update-type: version-update:semver-minor
+...
+
+Signed-off-by: dependabot[bot] <support@github.com>
+
+Signed-off-by: dependabot[bot] <support@github.com>
+Co-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
+
+- Bump actions/checkout from 2 to 3 [`[#5]`](https://github.com/DevelopersToolbox/github-lister-core/pull/5)
+
+- Bump octokit from 5.4.0 to 5.5.0 [`[#4]`](https://github.com/DevelopersToolbox/github-lister-core/pull/4)
+
+Bumps [octokit](https://github.com/octokit/octokit.rb) from 5.4.0 to 5.5.0.
+- [Release notes](https://github.com/octokit/octokit.rb/releases)
+- [Changelog](https://github.com/octokit/octokit.rb/blob/main/RELEASE.md)
+- [Commits](https://github.com/octokit/octokit.rb/compare/v5.4.0...v5.5.0)
+
+---
+updated-dependencies:
+- dependency-name: octokit
+ dependency-type: direct:production
+ update-type: version-update:semver-minor
+...
+
+Signed-off-by: dependabot[bot] <support@github.com>
+
+Signed-off-by: dependabot[bot] <support@github.com>
+Co-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
+
+- Add greetings [`[d00cb93]`](https://github.com/DevelopersToolbox/github-lister-core/commit/d00cb93b2d01a413fa4dbabc7e6fe4dfc42444bd)
 
 - Fix gitignore to ignore gem file [`[441b36a]`](https://github.com/DevelopersToolbox/github-lister-core/commit/441b36a39e10ed431a14ad7726e04bb21444aaf9)
 

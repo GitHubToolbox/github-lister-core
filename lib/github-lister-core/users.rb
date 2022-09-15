@@ -77,14 +77,6 @@ class GithubListerCore
             (user + users + username + usernames).uniq
         end
 
-        def get_user_list_no_authed_replace(client, options)
-            user_list = get_complete_user_list_array(options)
-
-            user_list = get_user_list_internal(client, user_list)
-
-            user_list.sort
-        end
-
         def get_user_list(client, options)
             user_list = get_complete_user_list_array(options)
 
