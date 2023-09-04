@@ -9,7 +9,7 @@ jobs:
         ruby: [ '2.7', '3.0', '3.1', 'head' ]
     name: Bundler Test on Ruby ${{ matrix.ruby }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Set up Ruby ${{ matrix.ruby }}
         uses: ruby/setup-ruby@v1
         with:
@@ -25,7 +25,7 @@ jobs:
         ruby: [ '2.7', '3.0', '3.1', 'head' ]
     name: Reek Test on Ruby ${{ matrix.ruby }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Set up Ruby ${{ matrix.ruby }}
         uses: ruby/setup-ruby@v1
         with:
@@ -39,7 +39,7 @@ jobs:
         ruby: [ '2.7', '3.0', '3.1', 'head' ]
     name: Rubocop Test on Ruby ${{ matrix.ruby }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Set up Ruby ${{ matrix.ruby }}
         uses: ruby/setup-ruby@v1
         with:
@@ -50,7 +50,7 @@ jobs:
     name: Awesomebot
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Set up Ruby 3.1
         uses: ruby/setup-ruby@v1
         with:
@@ -65,14 +65,14 @@ jobs:
     name: ShellCheck
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Run Shellcheck
         run: bash <(curl -s https://raw.githubusercontent.com/CICDToolbox/shellcheck/master/pipeline.sh)
   yaml-lint:
     name: YAML Lint
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Set up Ruby 3.1
         uses: ruby/setup-ruby@v1
         with:
