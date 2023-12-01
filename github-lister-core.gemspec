@@ -39,7 +39,7 @@ Gem::Specification.new do |spec|
     spec.add_development_dependency 'rake', '~> 13'
     spec.add_development_dependency 'reek', '~> 6'
     spec.add_development_dependency 'rspec', '~> 3.0'
-    spec.add_development_dependency 'rubocop', '~> 1.57.0'
+    spec.add_development_dependency 'rubocop', '~> 1.58.0'
 
     spec.add_runtime_dependency 'octokit', '~> 8'
     spec.add_runtime_dependency 'parallel', '~> 1.2'
