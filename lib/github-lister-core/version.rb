@@ -6,7 +6,7 @@ class GithubListerCore
     MINOR = 1
 
     # Current patch level.
-    PATCH = 7
+    PATCH = 8
 
     # Full release version.
     VERSION = [MAJOR, MINOR, PATCH].join('.').freeze
