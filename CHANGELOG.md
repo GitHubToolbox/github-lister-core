@@ -7,7 +7,9 @@ This changelog was automatically generated using [Caretaker](https://github.com/
 
 ### [Unreleased](https://github.com/GitHubToolbox/github-lister-core/compare/v0.1.6...HEAD)
 
-- New features - but more clean up needed [`[head]`](https://github.com/GitHubToolbox/github-lister-core/commit/)
+- Merge remote-tracking branch 'origin/master' [`[head]`](https://github.com/GitHubToolbox/github-lister-core/commit/)
+
+- New features - but more clean up needed [`[378f22f]`](https://github.com/GitHubToolbox/github-lister-core/commit/378f22fac96188d82b3c319434af2ca8ce89fcf4)
 
 - smell fix [`[3e0a85c]`](https://github.com/GitHubToolbox/github-lister-core/commit/3e0a85c9fdc519000226408682bf58037e03c2e1)
 
